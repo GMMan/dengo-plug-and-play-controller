@@ -51,4 +51,4 @@ This mod also enables RNDIS on the Plug & Play. You can access SSH on the Plug
 available. The rootfs is mounted read-only by default. If you need to write
 to rootfs, please remount it read-write with `mount -o remount,rw /`.
 
-Kernel source code available [here](https://gitlab.com/modmyclassic/sega-mega-drive-mini/genesismini/-/tree/densha).
+Kernel source code available [here](https://github.com/GMMan/dengo-plug-and-play-kernel).
