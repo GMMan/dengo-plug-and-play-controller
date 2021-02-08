@@ -1,0 +1,36 @@
+#!/bin/sh -e
+
+start() {
+    echo 0ae4 > "/sys/class/android_usb/android0/idVendor"
+    echo 0003 > "/sys/class/android_usb/android0/idProduct"
+    echo -n "TAITO" > "/sys/class/android_usb/android0/iManufacturer"
+    echo -n "Densha de Go! Plug & Play" > "/sys/class/android_usb/android0/iProduct"
+    echo "rndis,hid" > "/sys/class/android_usb/android0/functions"
+    echo 1 > "/sys/class/android_usb/android0/f_rndis/wceis"
+    echo 1 > "/sys/class/android_usb/android0/enable"
+    sleep 1
+    ifconfig rndis0 169.254.215.100 netmask 255.255.0.0
+    input_relay &
+}
+
+stop() {
+    killall input_relay
+    echo 0 >"/sys/class/android_usb/android0/enable"
+}
+
+case "$1" in
+start)
+	start
+;;
+stop)
+	stop
+;;
+restart)
+	stop
+	start
+;;
+*)
+	echo "$0: Please use start, stop, or restart."
+	exit 1
+;;
+esac
