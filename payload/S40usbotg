@@ -14,7 +14,7 @@ start() {
 }
 
 stop() {
-    killall input_relay
+    killall -q input_relay
     echo 0 >"/sys/class/android_usb/android0/enable"
 }
 
