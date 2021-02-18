@@ -33,6 +33,13 @@ connect sound from your computer, you can release the button. You should now be
 able to configure your games to use the Plug & Play as a normal Type 2 USB
 controller.
 
+The input has been modified slightly from an actual DGOC-44U's operation. For
+the emergency brake notch, it will only be triggered when you move the handle
+into the notch in the emergency section rather than when you just move into the
+section. When releasing emergency brakes, it will remain in the emergency notch
+until you have moved the handle into B8. This helps prevent accidentally
+engaging emergency brakes if you push slightly past B8.
+
 Note that the original USB controller does not have a D-pad. Instead, the ABCD
 buttons serve as directional buttons when SELECT is held. This does not work in
 all circumstances (such as for looking around when stopping the train). This
